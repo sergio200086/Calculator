@@ -14,7 +14,19 @@ namespace Calculator
 
         static void Main(string[] args)
         {
-            string JSONData = File.ReadAllText("data.txt");  // The JSON data can be founded in 'data.txt'
+            //string JSONData = File.ReadAllText("data.txt");  // Try to read one file that contains the info
+
+            string JSONData = @"{
+	        ""Device"": ""Arista"",
+	        ""Model"": ""X-Video"",
+	        ""NIC"": [{
+		        ""Description"": ""Linksys ABR"",
+		        ""MAC"": ""14:91:82:3C:D6:7D"",
+		        ""Timestamp"": ""2020-03-23T18:25:43.511Z"",
+		        ""Rx"": ""3698574500"",
+		        ""Tx"": ""122558800""
+	        }]
+	        }";
 
         
             var deserializedJson = JsonSerializer.Deserialize<Request>(JSONData); // Parse/Deserialize the json data
